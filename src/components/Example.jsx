@@ -15,12 +15,12 @@ export const Example = ({ match }) => {
       <li>
         <Link to={`${match.url}/zero`}>Seven</Link>
       </li>
-      <Route path={`${match.url}/:id`} component={ExBody}></Route>
+      <Route path={`${match.url}/:idNext`} component={ExBody}></Route>
     </>
   );
 };
 
 const ExBody = ({ match }) => {
   console.log('ExBody -> match', match);
-  return <div>{match.params.id}</div>;
+  return <div>{match.params.idNext}</div>;
 };

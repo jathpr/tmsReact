@@ -5,7 +5,7 @@ import { RoutedContent } from './RoutedContent';
 
 export const App = () => (
   <BrowserRouter>
-    <Sidebar></Sidebar>
-    <RoutedContent></RoutedContent>
+    <Sidebar />
+    <RoutedContent />
   </BrowserRouter>
 );
