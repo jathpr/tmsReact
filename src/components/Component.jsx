@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Component extends React.Component {
+class Component extends React.Component {
   constructor(props) {
     super(props);
     this.state = { tasks: [], newTask: '' };
@@ -28,3 +28,5 @@ export class Component extends React.Component {
     );
   }
 }
+
+export { Component };
