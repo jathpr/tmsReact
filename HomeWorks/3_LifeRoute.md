@@ -1,6 +1,14 @@
 ### Теория
 
-словарь - https://ru.reactjs.org/docs/glossary.html
-компонент - https://ru.reactjs.org/docs/react-component.html
-состояние и жизненный цикл - https://ru.reactjs.org/docs/state-and-lifecycle.html
+словарь - https://ru.reactjs.org/docs/glossary.html  
+компонент - https://ru.reactjs.org/docs/react-component.html  
+состояние и жизненный цикл - https://ru.reactjs.org/docs/state-and-lifecycle.html  
 роутер - https://reacttraining.com/react-router/web/example/basic
+
+### Практика - Написать ToDo
+
+1. Создать компонент показывающий актуальный список задач
+2. Добавить поле добавления новых задач
+3. Добавить каждой задаче возможность изменить состояние на выполненное (по прежнему отображаются все задачи, неактивные с другим стилем)
+4. Добавить роутинг - переход между страницами с активными и не активными задачами
+5. Добавить возможность удалять задачи и страницу с удаленными задачами
