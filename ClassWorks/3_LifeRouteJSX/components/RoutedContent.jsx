@@ -31,7 +31,7 @@ function Dashboard() {
 function RedirectPage() {
   return (
     <div>
-      <h2>Redirect</h2>
+      <h2 className={`always ${this.state.checked ? 'chk' : 'unchk'} ${this.state.checked && 'chk'}`}>Redirect</h2>
       <Redirect to="/about" />
     </div>
   );

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './components/App';
-import { LifeCycles } from './components/LifeCycles';
 import './index.css';
+import 'antd/dist/antd.css';
 
 ReactDOM.render(
   <React.StrictMode>

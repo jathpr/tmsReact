@@ -1,11 +1,4 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { Sidebar } from './Sidebar';
-import { RoutedContent } from './RoutedContent';
+import { ToDo } from './ToDo';
 
-export const App = () => (
-  <BrowserRouter>
-    <Sidebar />
-    <RoutedContent />
-  </BrowserRouter>
-);
+export const App = () => <ToDo />;
