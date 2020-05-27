@@ -1,5 +1,9 @@
 import React from 'react';
-import { Item } from './ToDoItem';
+import { toggleDone, toggleRemove, getNewId } from './utils';
+import { ToDoList } from './ToDoList';
+import { AddItem } from './AddItem';
+import { Menu } from './Menu';
+import { RenderList } from './RenderList';
 
 export class ToDo extends React.Component {
   constructor(props) {
@@ -14,27 +18,37 @@ export class ToDo extends React.Component {
   }
 
   handleDone = (id) => {
+    this.setState((oldState) => ({ list: toggleDone(oldState.list, id) }));
+  };
+
+  handleRemove = (id) => {
     this.setState((oldState) => {
-      // const stateCopy = _.cloneDeep(oldState);
-      // stateCopy.list[id].done = !stateCopy.list[id].done;
-      // return stateCopy;
-      return { ...oldState, list: oldState.list.map((el) => (el.id === id ? { ...el, done: !el.done } : el)) };
+      const newList = oldState.list.map((el) => {
+        if (el.id !== id) return el;
+        return { ...el, active: !el.active };
+      });
+      return { list: newList };
+      return { list: toggleRemove(oldState.list, id) };
+    });
+  };
+
+  handleAdd = (name) => {
+    this.setState((state) => {
+      const newId = getNewId(state.list);
+      const newTask = { id: newId, name, done: false, active: true };
+      return { list: [...state.list, newTask] };
     });
   };
 
   render() {
-    let listItems = this.state.list.map((element, i) => {
-      return (
-        <Item
-          key={element.id}
-          checked={element.done}
-          name={element.name}
-          onDone={this.handleDone}
-          id={element.id}
-        ></Item>
-      );
-    });
+    const { list: items } = this.state;
 
-    return <ul>{listItems}</ul>;
+    return (
+      <>
+        <Menu />
+        <RenderList items={items} onDone={this.handleDone} onRemove={this.handleRemove} />
+        <AddItem onAdd={this.handleAdd} />
+      </>
+    );
   }
 }

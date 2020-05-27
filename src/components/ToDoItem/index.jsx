@@ -1,18 +1,24 @@
 import React from 'react';
-import { Checkbox, Button } from 'antd';
-import styles from './item.module.css';
+import { Checkbox, Button, List, Typography } from 'antd';
+import { Link } from 'react-router-dom';
 
-export const Item = (props) => {
-  const { checked, name, active = true, onRemove, onDone, id } = props;
-  return (
-    <li className={checked ? styles.chk : 'unchk'}>
-      {name}
-      {active && <Checkbox className={styles.chk_box} checked={checked} onChange={() => onDone(id)} />}
-      {active && (
-        <Button className="delete" onClick={() => onRemove(id)}>
-          X
-        </Button>
-      )}
-    </li>
-  );
-};
+const { Text } = Typography;
+
+export const ToDoItem = ({ item: { done: checked, name, active, id }, onRemove, onDone }) => (
+  <List.Item style={{ justifyContent: 'center' }}>
+    {active && <Checkbox checked={checked} onChange={() => onDone(id)} />}
+    <Text delete={checked}>
+      <Link to={`item/${id}`}>{name}</Link>
+    </Text>
+    {active && (
+      <Button className="delete" onClick={() => onRemove(id)}>
+        X
+      </Button>
+    )}
+    {!active && (
+      <Button className="delete" onClick={() => onRemove(id)}>
+        Restore
+      </Button>
+    )}
+  </List.Item>
+);
