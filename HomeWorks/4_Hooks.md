@@ -1,8 +1,8 @@
 ### Теория
 
-введение в хуки - https://ru.reactjs.org/docs/hooks-intro.html
-useState - https://ru.reactjs.org/docs/hooks-state.html
-подъём состояния - https://ru.reactjs.org/docs/lifting-state-up.html
+введение в хуки - https://ru.reactjs.org/docs/hooks-intro.html  
+useState - https://ru.reactjs.org/docs/hooks-state.html  
+подъём состояния - https://ru.reactjs.org/docs/lifting-state-up.html  
 формы - https://ru.reactjs.org/docs/forms.html
 
 ### Практика
