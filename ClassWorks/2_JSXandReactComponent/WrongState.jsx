@@ -5,11 +5,15 @@ export class WrongState extends React.Component {
     counter: 1,
   };
 
-  incrementCounter = () => this.setState({ counter: this.state.counter + 1 });
+  incrementCounter = () => this.setState({ counter: 1 });
   // incrementCounter = () => this.setState((state) => ({ counter: state.counter + 1 }));
 
   massIncrement = () => {
     // this code will lead to not what you expect
+    this.incrementCounter();
+    this.incrementCounter();
+    this.incrementCounter();
+    this.incrementCounter();
     this.incrementCounter();
     this.incrementCounter();
   };
