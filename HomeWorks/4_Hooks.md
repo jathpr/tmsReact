@@ -7,7 +7,7 @@ useState - https://ru.reactjs.org/docs/hooks-state.html
 
 ### Практика
 
-Использовать только функциональные компоненты (Name = (props) => <element color={props.colors[0]}/>)
+Использовать только функциональные компоненты (`Name = (props) => <element color={props.colors[0]}/>`)
 
 - Создать компонент App, вывести в нём текст внутри div
 - Создать компонент Login, вывести в нём текст внутри div
