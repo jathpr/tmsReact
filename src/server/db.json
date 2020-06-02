@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "login": "Dima",
+      "other": "other1",
+      "pass": "pass"
+    },
+    {
+      "id": 1,
+      "login": "Imad",
+      "other": "other2",
+      "pass": "pass"
+    },
+    {
+      "id": 2,
+      "login": "Mida",
+      "other": "other3",
+      "pass": "pass"
+    },
+    {
+      "id": 3,
+      "login": "Aimd",
+      "other": "other4",
+      "pass": "pass"
+    },
+    {
+      "id": 4,
+      "login": "a",
+      "other": "o",
+      "pass": "1"
+    },
+    {
+      "login": "1",
+      "pass": "1",
+      "other": "1",
+      "id": 5
+    },
+    {
+      "login": "2",
+      "pass": "2",
+      "other": "2",
+      "id": 6
+    }
+  ]
+}
