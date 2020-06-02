@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Input, Button } from 'antd';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 
 const layout = {
   labelCol: {
@@ -17,36 +17,18 @@ const tailLayout = {
   },
 };
 
-const sendData = async (data) => {
-  const url = 'http://localhost:3004/users';
-  try {
-    const response = await fetch(url, {
-      method: 'POST', // или 'PUT'
-      body: JSON.stringify(data), // данные могут быть 'строкой' или {объектом}!
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const json = await response.json();
-    console.log('Успех:', JSON.stringify(json));
-  } catch (error) {
-    console.error('Ошибка:', error);
-  }
-};
-
 export const Register = ({ addUser }) => {
-  const [success, setSuccess] = useState(false);
+  let history = useHistory();
+
   const onFinish = (values) => {
-    // addUser({ login: values.username, pass: values.password, other: values.other });
-    sendData({ login: values.username, pass: values.password, other: values.other });
-    setSuccess(true);
+    addUser({ login: values.username, pass: values.password, other: values.other });
+    history.push('/login');
   };
 
   const onFinishFailed = (errorInfo) => {};
 
   return (
     <>
-      {success && <Redirect to="/login" />}
       <Form
         {...layout}
         name="basic"

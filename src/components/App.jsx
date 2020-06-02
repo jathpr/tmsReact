@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import { Login } from '../pages/Login';
 import { Register } from '../pages/Register';
 import { Main } from '../pages/Main';
+import { ThemeContext, themes } from '../Styles/Themes';
 
 export const App = () => {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState();
+  const [theme, setTheme] = useState(themes.light);
 
   useEffect(() => {
     const getData = async () => {
@@ -15,10 +17,23 @@ export const App = () => {
       setUsers(data);
     };
     getData();
-  });
+  }, []);
 
-  const addUser = (user) => {
-    setUsers([...users, user]);
+  const sendData = async (data) => {
+    const url = 'http://localhost:3004/users';
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const json = await response.json();
+      setUsers([...users, json]);
+    } catch (error) {
+      console.error('Ошибка:', error);
+    }
   };
 
   const checkUser = (user) => {
@@ -32,12 +47,22 @@ export const App = () => {
 
   return (
     <Router>
-      <Switch>
-        <Route path="/register" render={() => <Register addUser={addUser} />}></Route>
-        <Route path="/login" render={() => <Login user={user} checkUser={checkUser} />}></Route>
-        {!user && <Redirect to="/login" />}
-        <Route path="/main" render={() => <Main users={users} user={user} onLogout={onLogout} />}></Route>
-      </Switch>
+      <ThemeContext.Provider value={theme}>
+        <button
+          onClick={() => {
+            setTheme(theme === themes.dark ? themes.light : themes.dark);
+          }}
+          style={{ float: 'right' }}
+        >
+          Theme
+        </button>
+        <Switch>
+          <Route path="/register" render={() => <Register addUser={sendData} />}></Route>
+          <Route path="/login" render={() => <Login user={user} checkUser={checkUser} />}></Route>
+          {!user && <Redirect to="/login" />}
+          <Route path="/main" render={() => <Main users={users} user={user} onLogout={onLogout} />}></Route>
+        </Switch>
+      </ThemeContext.Provider>
     </Router>
   );
 };

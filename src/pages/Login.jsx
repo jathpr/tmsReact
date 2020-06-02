@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Form, Input, Button } from 'antd';
 import { Link, Redirect } from 'react-router-dom';
+import { ThemeContext } from '../Styles/Themes';
 
 const layout = {
   labelCol: {
@@ -23,6 +24,9 @@ export const Login = ({ checkUser, user }) => {
   };
 
   const onFinishFailed = (errorInfo) => {};
+
+  const theme = useContext(ThemeContext);
+  console.log('onFinishFailed -> theme', theme);
 
   return (
     <Form
@@ -62,7 +66,7 @@ export const Login = ({ checkUser, user }) => {
       </Form.Item>
 
       <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" style={{ background: theme.background, color: theme.foreground }}>
           Submit
         </Button>
         <Button type="primary">
