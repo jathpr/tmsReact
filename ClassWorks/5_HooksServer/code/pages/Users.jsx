@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { List, Divider } from 'antd';
-import { UsersContext } from '../state/Contexts';
 
-export const Users = () => {
-  const users = useContext(UsersContext);
-
+export const Users = ({ users }) => {
   return (
     <>
       <Divider orientation="left">List of Users</Divider>

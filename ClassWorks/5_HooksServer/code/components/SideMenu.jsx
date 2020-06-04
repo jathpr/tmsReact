@@ -1,15 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Button } from 'antd';
-import { UsersDispatch } from '../state/Contexts';
 
-export const SideMenu = () => {
-  const { setUser } = useContext(UsersDispatch);
-
-  const onLogout = () => {
-    setUser();
-  };
-
+export const SideMenu = ({ onLogout }) => {
   return (
     <Menu defaultSelectedKeys={['1']} style={{ height: '100%', borderRight: 0 }}>
       <Menu.Item key="1">

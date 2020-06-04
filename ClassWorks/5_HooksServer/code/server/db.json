@@ -58,24 +58,6 @@
       "pass": "4",
       "other": "4",
       "id": 9
-    },
-    {
-      "login": "qwe",
-      "pass": "ewr",
-      "other": "ret",
-      "id": 11
-    },
-    {
-      "login": "b",
-      "pass": "b",
-      "other": "b",
-      "id": 12
-    },
-    {
-      "login": "4",
-      "pass": "2",
-      "other": "24",
-      "id": 13
     }
   ]
 }

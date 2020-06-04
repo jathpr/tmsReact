@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Form, Input, Button } from 'antd';
-import { Link, useHistory } from 'react-router-dom';
-import { UsersContext, UsersDispatch } from '../state/Contexts';
+import { Link, Redirect } from 'react-router-dom';
+import { ThemeContext } from '../Styles/Themes';
 
 const layout = {
   labelCol: {
@@ -18,22 +18,15 @@ const tailLayout = {
   },
 };
 
-export const Login = () => {
-  const { setUser } = useContext(UsersDispatch);
-  const users = useContext(UsersContext);
-  let history = useHistory();
-
+export const Login = ({ checkUser, user }) => {
   const onFinish = (values) => {
-    const userIs = users.find((user) => user.login === values.login && user.pass === values.pass);
-    if (userIs) {
-      setUser(userIs);
-      history.push('/main');
-    }
+    checkUser({ login: values.username, pass: values.password });
   };
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('onFinishFailed -> errorInfo', errorInfo);
-  };
+  const onFinishFailed = (errorInfo) => {};
+
+  const theme = useContext(ThemeContext);
+  console.log('onFinishFailed -> theme', theme);
 
   return (
     <Form
@@ -45,9 +38,10 @@ export const Login = () => {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
     >
+      {!!user && <Redirect to="/main" />}
       <Form.Item
         label="Username"
-        name="login"
+        name="username"
         rules={[
           {
             required: true,
@@ -60,7 +54,7 @@ export const Login = () => {
 
       <Form.Item
         label="Password"
-        name="pass"
+        name="password"
         rules={[
           {
             required: true,
@@ -72,7 +66,7 @@ export const Login = () => {
       </Form.Item>
 
       <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" style={{ background: theme.background, color: theme.foreground }}>
           Submit
         </Button>
         <Button type="primary">
