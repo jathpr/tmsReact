@@ -1,0 +1,139 @@
+{
+  "data": {
+    "paginationMeta": { "currentPage": 3, "currentPageSize": 10, "totalPages": 22, "totalRecords": 220 },
+    "last_update": "Jun, 04 2020, 15:59, UTC",
+    "rows": [
+      {
+        "country": "Pakistan",
+        "country_abbreviation": "PK",
+        "total_cases": "35,788",
+        "new_cases": "0",
+        "total_deaths": "770",
+        "new_deaths": "0",
+        "total_recovered": "9,695",
+        "active_cases": "25,323",
+        "serious_critical": "111",
+        "cases_per_mill_pop": "162.0",
+        "flag": "https://www.worldometers.info/img/flags/pk-flag.gif"
+      },
+      {
+        "country": "Ecuador",
+        "country_abbreviation": "EC",
+        "total_cases": "30,502",
+        "new_cases": "0",
+        "total_deaths": "2,338",
+        "new_deaths": "0",
+        "total_recovered": "3,433",
+        "active_cases": "24,731",
+        "serious_critical": "196",
+        "cases_per_mill_pop": "1,729.0",
+        "flag": "https://www.worldometers.info/img/flags/ec-flag.gif"
+      },
+      {
+        "country": "Switzerland",
+        "country_abbreviation": "CH",
+        "total_cases": "30,463",
+        "new_cases": "0",
+        "total_deaths": "1,872",
+        "new_deaths": "0",
+        "total_recovered": "27,100",
+        "active_cases": "1,491",
+        "serious_critical": "79",
+        "cases_per_mill_pop": "3,520.0",
+        "flag": "https://www.worldometers.info/img/flags/sz-flag.gif"
+      },
+      {
+        "country": "Sweden",
+        "country_abbreviation": "SE",
+        "total_cases": "28,582",
+        "new_cases": "0",
+        "total_deaths": "3,529",
+        "new_deaths": "0",
+        "total_recovered": "4,971",
+        "active_cases": "20,082",
+        "serious_critical": "351",
+        "cases_per_mill_pop": "2,830.0",
+        "flag": "https://www.worldometers.info/img/flags/sw-flag.gif"
+      },
+      {
+        "country": "Portugal",
+        "country_abbreviation": "PT",
+        "total_cases": "28,319",
+        "new_cases": "0",
+        "total_deaths": "1,184",
+        "new_deaths": "0",
+        "total_recovered": "3,198",
+        "active_cases": "23,937",
+        "serious_critical": "108",
+        "cases_per_mill_pop": "2,777.0",
+        "flag": "https://www.worldometers.info/img/flags/po-flag.gif"
+      },
+      {
+        "country": "Qatar",
+        "country_abbreviation": "QA",
+        "total_cases": "28,272",
+        "new_cases": "0",
+        "total_deaths": "14",
+        "new_deaths": "0",
+        "total_recovered": "3,356",
+        "active_cases": "24,902",
+        "serious_critical": "72",
+        "cases_per_mill_pop": "9,813.0",
+        "flag": "https://www.worldometers.info/img/flags/qa-flag.gif"
+      },
+      {
+        "country": "Belarus",
+        "country_abbreviation": "BY",
+        "total_cases": "26,772",
+        "new_cases": "0",
+        "total_deaths": "151",
+        "new_deaths": "0",
+        "total_recovered": "8,168",
+        "active_cases": "18,453",
+        "serious_critical": "92",
+        "cases_per_mill_pop": "2,833.0",
+        "flag": "https://www.worldometers.info/img/flags/bo-flag.gif"
+      },
+      {
+        "country": "Singapore",
+        "country_abbreviation": "SG",
+        "total_cases": "26,098",
+        "new_cases": "0",
+        "total_deaths": "21",
+        "new_deaths": "0",
+        "total_recovered": "5,973",
+        "active_cases": "20,104",
+        "serious_critical": "20",
+        "cases_per_mill_pop": "4,461.0",
+        "flag": "https://www.worldometers.info/img/flags/sn-flag.gif"
+      },
+      {
+        "country": "Ireland",
+        "country_abbreviation": "IE",
+        "total_cases": "23,827",
+        "new_cases": "0",
+        "total_deaths": "1,506",
+        "new_deaths": "0",
+        "total_recovered": "19,470",
+        "active_cases": "2,851",
+        "serious_critical": "69",
+        "cases_per_mill_pop": "4,825.0",
+        "flag": "https://www.worldometers.info/img/flags/ei-flag.gif"
+      },
+      {
+        "country": "UAE",
+        "country_abbreviation": "AE",
+        "total_cases": "21,084",
+        "new_cases": "0",
+        "total_deaths": "208",
+        "new_deaths": "0",
+        "total_recovered": "6,930",
+        "active_cases": "13,946",
+        "serious_critical": "1",
+        "cases_per_mill_pop": "2,132.0",
+        "flag": "https://www.worldometers.info/img/flags/ae-flag.gif"
+      }
+    ]
+  },
+  "status": "success"
+}

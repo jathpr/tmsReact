@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Form, Input, Button } from 'antd';
 import { Link, useHistory } from 'react-router-dom';
 import { UsersContext, UsersDispatch } from '../state/Contexts';
+import styles from './';
 
 const layout = {
   labelCol: {
@@ -21,7 +22,7 @@ const tailLayout = {
 export const Login = () => {
   const { setUser } = useContext(UsersDispatch);
   const users = useContext(UsersContext);
-  let history = useHistory();
+  const history = useHistory();
 
   const onFinish = (values) => {
     const userIs = users.find((user) => user.login === values.login && user.pass === values.pass);

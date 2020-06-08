@@ -14,9 +14,7 @@ export const RoutedContent = () => (
       <RedirectPage />
     </Route>
     <Route path="/example" render={({ match }) => <Example match={match} />}></Route>
-    <Route path="/">
-      <Home />
-    </Route>
+    <Route path="/" component={Home} />
   </Switch>
 );
 
