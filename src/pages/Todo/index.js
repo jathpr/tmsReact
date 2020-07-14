@@ -16,3 +16,7 @@ const actionCreators = {
 };
 
 export const Todo = connect(mapStateToProps, actionCreators)(TodoComponent);
+
+// const url = new URL('path.com');
+// url.searchParams.set('pAR', 'привет');
+// fetch(url);

@@ -6,7 +6,20 @@ export const getTodos = () => {
   return async (dispatch) => {
     dispatch(getTodosStarted());
 
-    const resp = await fetch('http://localhost:3004/todos');
+    const todoUrl = new URL('http://localhost:3004/todos');
+    const weatehr = await fetch(
+      'https://api.openweathermap.org/data/2.5/weather?q=kiev&appid=0f0e60a3594c2453ada35208109c6409'
+      // {
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // }
+    );
+    console.log('getTodos -> weatehr', weatehr);
+    const dat = await weatehr.json();
+    console.log('getTodos -> dat', dat);
+    todoUrl.searchParams.append('test', 'привет авп');
+    const resp = await fetch(todoUrl);
     const data = await resp.json();
     dispatch(setTodos(data));
   };
