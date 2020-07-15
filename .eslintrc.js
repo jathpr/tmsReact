@@ -11,6 +11,7 @@ module.exports = {
 		amd: true
 	},
 	extends: [
+		"react-app",
 		"plugin:react/recommended",
 		"prettier",
 		"prettier/react",
@@ -25,6 +26,7 @@ module.exports = {
 	},
 	plugins: [
 		"react",
+		"eslint-plugin-import",
 		"prettier"
 	],
 	rules: {
