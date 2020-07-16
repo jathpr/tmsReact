@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 export const AddTodo = ({ addTodo }) => {
-  const [input, setInput] = useState('');
+	const [input, setInput] = useState('')
 
-  const handleAdd = () => {
-    addTodo({ text: input, done: false });
-    setInput('');
-  };
+	const handleAdd = () => {
+		addTodo({ text: input, done: false })
+		setInput('')
+	}
 
-  return (
-    <>
-      <input value={input} onChange={(e) => setInput(e.target.value)}></input>
-      <button onClick={handleAdd}>Add</button>
-    </>
-  );
-};
+	return (
+		<>
+			<input value={input} onChange={(e) => setInput(e.target.value)} />
+			<button onClick={handleAdd}>Add</button>
+		</>
+	)
+}
