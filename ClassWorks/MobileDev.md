@@ -1,6 +1,7 @@
 react native - https://reactnative.dev/docs/environment-setup
 ionic - https://ionicframework.com/
 preza - https://slides.com/jathpr/deck/live
+`yarn global add @ionic/cli`
 `ionic config set -g npmClient yarn`
 `ionic start`
 
